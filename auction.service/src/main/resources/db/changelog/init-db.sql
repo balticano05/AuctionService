@@ -22,7 +22,7 @@ CREATE TABLE "lots_statuses" (
 );
 
 CREATE TABLE "categories" (
-  "id" uuid,
+  "id" uuid PRIMARY KEY,
   "name" varchar,
   "description" text,
   "parent_id" uuid
@@ -30,11 +30,11 @@ CREATE TABLE "categories" (
 
 CREATE TABLE "lots_categories" (
   "lot_id" uuid,
-  "status_id" uuid
+  "category_id" uuid
 );
 
 CREATE TABLE "bids" (
-  "lot_id" uuid,
+  "lot_id" uuid PRIMARY KEY,
   "user_id" uuid,
   "amount" decimal,
   "created_at" timestamp

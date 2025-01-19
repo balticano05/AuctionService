@@ -1,0 +1,31 @@
+version: '2.8'
+
+services:
+  #DATABASE SERVICE
+  db:
+    image: 'postgres:16-alpine'
+    hostname: database
+    container_name: auctiondb
+    ports:
+      - '5434:5434'
+    restart: always
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+    
+  #AUCTION
+  auction_service_app:
+    build: ./auction.service
+    image: auction_service/auction_app:v1
+    ports:
+      - '8081:8081'
+    depends_on:
+      - db
+    restart: always
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://db:5434/auction_service_db
+      - SPRING_DATASOURCE_USERNAME=postgres
+      - SPRING_DATASOURCE_PASSWORD=postgres
+      - SPRING_JPA_HIBERNATE_DDL_AUTO=none
+      - SPRING_DATASOURCE_DRIVER_CLASS_NAME=org.postgresql.Driver
+      - SPRING_JPA_PROPERTIES_HIBERNATE_DIALECT=org.hibernate.dialect.PostgreSQLDialect

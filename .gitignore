@@ -31,3 +31,4 @@ replay_pid*
 !.vscode/launch.json 
 !.vscode/extensions.json 
 .history.vscode/settings.json
+.history

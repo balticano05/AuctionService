@@ -31,7 +31,6 @@ replay_pid*
 !.vscode/launch.json 
 !.vscode/extensions.json 
 .history.vscode/settings.json
+.history
 security.service/.history
 auction.service/.history
-auction.service/target
-security.service/target

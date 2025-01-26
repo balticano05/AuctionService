@@ -17,24 +17,21 @@ import lombok.experimental.Accessors;
 @Setter
 @Getter
 @Entity
-@Table(name = "categories")
+@Table(name = "statuses")
 @Accessors(chain = true) 
-public class Category {
+public class Status {
 
     @Id
     @UuidGenerator
     private UUID id;
-
-    @Column(name = "name", nullable = false)
+    
+    @Column(name = "name", unique = true, nullable = false)
     private String name;
 
     @Column(name = "description")
     private String description;
 
-    @Column(name = "parent_id")
-    private UUID parent_id;
-
-    @ManyToMany(mappedBy = "lotCategories")
+    @ManyToMany(mappedBy = "lotStatuses")
     HashSet<Lot> lots;
 
 }

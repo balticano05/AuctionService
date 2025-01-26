@@ -19,13 +19,13 @@ CREATE TABLE "roles" (
   "description" text
 );
 
-CREATE TABLE "users_roles" (
-  "user_id" uuid,
+CREATE TABLE "credentials_roles" (
+  "credential_id" uuid,
   "role_id" uuid
 );
 
-ALTER TABLE "users_roles" ADD FOREIGN KEY ("user_id") REFERENCES "users" ("id");
+ALTER TABLE "credentials_roles" ADD FOREIGN KEY ("credential_id") REFERENCES "credentials" ("id");
 
-ALTER TABLE "users_roles" ADD FOREIGN KEY ("role_id") REFERENCES "roles" ("id");
+ALTER TABLE "credentials_roles" ADD FOREIGN KEY ("role_id") REFERENCES "roles" ("id");
 
 ALTER TABLE "credentials" ADD FOREIGN KEY ("id") REFERENCES "users" ("id");

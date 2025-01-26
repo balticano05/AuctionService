@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
+
+    <changeSet id="create_lots" author="author_name">
+        <sqlFile path="sql/create-lots-table.sql"
+                 relativeToChangelogFile="true"
+                 splitStatements="true"
+                 endDelimiter=";" />
+    </changeSet>
+
+    <changeSet id="create_statuses" author="author_name">
+        <sqlFile path="sql/create-statuses-table.sql"
+                 relativeToChangelogFile="true"
+                 splitStatements="true"
+                 endDelimiter=";" />
+    </changeSet>
+
+    <changeSet id="create_lots_statuses" author="author_name">
+        <sqlFile path="sql/create-lots-statuses-table.sql"
+                 relativeToChangelogFile="true"
+                 splitStatements="true"
+                 endDelimiter=";" />
+    </changeSet>
+
+    <changeSet id="create_categories" author="author_name">
+        <sqlFile path="sql/create-categories-table.sql"
+                 relativeToChangelogFile="true"
+                 splitStatements="true"
+                 endDelimiter=";" />
+    </changeSet>
+
+    <changeSet id="create_lots_categories" author="author_name">
+        <sqlFile path="sql/create-lots-categories-table.sql"
+                 relativeToChangelogFile="true"
+                 splitStatements="true"
+                 endDelimiter=";" />
+    </changeSet>
+
+    <changeSet id="create_bids" author="author_name">
+        <sqlFile path="sql/create-bids-table.sql"
+                 relativeToChangelogFile="true"
+                 splitStatements="true"
+                 endDelimiter=";" />
+    </changeSet>
+
+    <changeSet id="add_foreign_keys" author="author_name">
+        <sqlFile path="sql/add-foreign-keys.sql"
+                 relativeToChangelogFile="true"
+                 splitStatements="true"
+                 endDelimiter=";" />
+    </changeSet>
+
+</databaseChangeLog>

@@ -36,3 +36,5 @@ security.service/.history
 auction.service/.history
 auction.service/target
 security.service/target
+security.service/.vscode
+auction.service/.vscode
